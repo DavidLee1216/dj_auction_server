@@ -36,6 +36,7 @@ REST_FRAMEWORK = {
 
 INSTALLED_APPS = [
     'user',
+    'auction',
     'rest_framework',
     'rest_framework_swagger',
     'django.contrib.admin',

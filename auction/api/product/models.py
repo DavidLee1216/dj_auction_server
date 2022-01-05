@@ -1,7 +1,7 @@
 from django.db import models
 
-from restshop.api.tag.models import Tag
-from restshop.api.user.models import Seller
+from auction.api.tag.models import Tag
+from auction.api.user.models import Seller
 
 
 class Product(models.Model):

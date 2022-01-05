@@ -1,7 +1,7 @@
 from django.db import models
 
-from restshop.api.order.models import Order
-from restshop.api.unit.models import Unit
+from auction.api.order.models import Order
+from auction.api.unit.models import Unit
 
 
 class OrderUnit(models.Model):
@@ -15,7 +15,7 @@ class OrderUnit(models.Model):
     )
 
     order = models.ForeignKey(to=Order, on_delete=models.CASCADE)
-    unit = models.ForeignKey(to=Unit)
+    unit = models.ForeignKey(to=Unit, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
     unit_price = models.PositiveIntegerField()
     status = models.CharField(max_length=2, choices=STATUSES, default=PENDING)

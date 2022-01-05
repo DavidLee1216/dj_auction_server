@@ -1,8 +1,8 @@
-from django.contrib.auth.models import User
+from user.models import User
 from django.contrib.sessions.models import Session
 from django.db import models
 
-from api.unit.models import Unit
+from auction.api.unit.models import Unit
 
 
 class CartUnit(models.Model):
@@ -10,7 +10,7 @@ class CartUnit(models.Model):
         to=User, null=True, on_delete=models.CASCADE, related_name='cart_units')
     session = models.ForeignKey(
         to=Session, null=True, on_delete=models.CASCADE, related_name='cart_units')
-    unit = models.ForeignKey(to=Unit)
+    unit = models.ForeignKey(to=Unit, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
 
     def __str__(self):
